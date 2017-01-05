@@ -9,6 +9,9 @@
 	Contains:   CMS Session
 */
 
+#ifndef __EASY_CMS_SESSION__
+#define __EASY_CMS_SESSION__
+
 #include "Task.h"
 #include "TimeoutTask.h"
 
@@ -23,9 +26,6 @@
 
 using namespace EasyDarwin::Protocol;
 using namespace std;
-
-#ifndef __EASY_CMS_SESSION__
-#define __EASY_CMS_SESSION__
 
 class EasyCMSSession : public Task
 {

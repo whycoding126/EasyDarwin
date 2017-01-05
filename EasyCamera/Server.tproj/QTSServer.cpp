@@ -52,6 +52,7 @@
 
  //Compile time modules
 #include "QTSSErrorLogModule.h"
+#include "EasyLoginModule.h"
 #include "EasyCMSModule.h"
 #include "EasyCameraModule.h"
 
@@ -203,6 +204,10 @@ void    QTSServer::LoadCompiledInModules()
 	// The following modules are all compiled into the server. 
 
 #endif //DSS_DYNAMIC_MODULES_ONLY
+
+	QTSSModule* theLoginModule = new QTSSModule("EasyLoginModule");
+	(void)theLoginModule->SetupModule(&sCallbacks, &EasyLoginModule_Main);
+	(void)AddModule(theLoginModule);
 
 	QTSSModule* theCameraModule = new QTSSModule("EasyCameraModule");
 	(void)theCameraModule->SetupModule(&sCallbacks, &EasyCameraModule_Main);
